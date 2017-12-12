@@ -1,5 +1,5 @@
 /**
- * <h1>FixTags.java</h1> 
+ * <h1>FixTags.java</h1>
  * <p>
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
@@ -48,7 +48,7 @@ import java.io.File;
 /**
  * The Class FixTags.
  */
-public class FixTags {
+public class FixTagsTest {
   /** The tr. */
   TiffReader tr;
 
@@ -177,6 +177,8 @@ public class FixTags {
       assertEquals("desc", ifdCopy.getTag("ImageDescription").toString());
       assertEquals(trCopy.getBaselineValidation().getErrors().size(), tr.getBaselineValidation()
           .getErrors().size());
+      new File("src" + separator + "test" + separator + "resources" + separator + "Small"
+          + separator + "RGB_stripped2.tif").delete();
     } catch (Exception e) {
       assertEquals(0, 1);
     }
@@ -236,4 +238,3 @@ public class FixTags {
     }
   }
 }
-
